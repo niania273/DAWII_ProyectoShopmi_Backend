@@ -61,7 +61,7 @@ public class AuthService {
             u.setPhone(dto.getTelUsuario());
             u.setEmail(dto.getCorUsuario());
             u.setPasswordHash(encoder.encode(dto.getPassword()));
-            u.setCreatedAt(Timestamp.valueOf(LocalDateTime.now()));
+            u.setCreatedAt(Timestamp.valueOf(LocalDateTime.now()).toLocalDateTime());
             u.setStatus(1);
             u.setCodCliente(codCliente.intValue());
             u.setRole(defaultRole);
