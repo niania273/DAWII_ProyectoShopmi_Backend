@@ -8,6 +8,10 @@
         <option value="$PROJECT_DIR$/commondto/commondto/pom.xml" />
         <option value="$PROJECT_DIR$/serviceauthentication/serviceauthentication/pom.xml" />
         <option value="$PROJECT_DIR$/Servicio de Pedidos/serviceorder/pom.xml" />
+        <option value="$PROJECT_DIR$/Servicio de Catalogo/servicecatalog/pom.xml" />
+        <option value="$PROJECT_DIR$/Servicio de Productos/serviceproduct/pom.xml" />
+        <option value="$PROJECT_DIR$/Servicio de Autenticacion/serviceauthentication/pom.xml" />
+        <option value="$PROJECT_DIR$/Servicio Gateway/gateway-service/pom.xml" />
       </list>
     </option>
   </component>

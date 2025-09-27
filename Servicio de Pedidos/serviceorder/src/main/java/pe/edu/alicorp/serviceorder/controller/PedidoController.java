@@ -2,12 +2,14 @@ package pe.edu.alicorp.serviceorder.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.alicorp.commondto.dto.PedidoDTO;
-import pe.edu.alicorp.serviceorder.model.EstadoPedido;
+import pe.edu.alicorp.commondto.dto.PedidoResponseDTO;
+import pe.edu.alicorp.serviceorder.mapper.PedidoMapper;
+import pe.edu.alicorp.serviceorder.service.DetallePedidoService;
 import pe.edu.alicorp.serviceorder.service.EstadoPedidoService;
 import pe.edu.alicorp.serviceorder.service.PedidoService;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/pedidos")
@@ -17,28 +19,22 @@ public class PedidoController {
     private PedidoService pedidoService;
     @Autowired
     private EstadoPedidoService estadoPedidoService;
+    @Autowired
+    private DetallePedidoService detallePedidoService;
 
-//    @GetMapping("/obtenerpedidos/{id}")
-//    public List<PedidoDTO> obtenerPedidos(){
-//        //Obtener nombre del cliente
-//
-//        return pedidoService.findAll()
-//                .stream()
-//                .map(pedido -> {
-//                    String nomEstado = estadoPedidoService.findById(pedido.getCodestado())
-//                            .map(EstadoPedido::getNomEstado)
-//                            .orElse("");
-//
-//                    return new PedidoDTO(
-//                            pedido.getCodpedido(),
-//                            pedido.getFecped(),
-//                            pedido.getPreciototal(),
-//                            nomEstado,
-//                            pedido.isEstped()
-//                    );
-//                })
-//                .toList();
-//    }
+    @GetMapping("/ListarPedidos/{id}")
+    public List<PedidoResponseDTO> listarPedidos(){
+        //UsuarioClient para obtener cliente
+        //UsuarioDTO usuarioDTO = usuarioClient
+        return pedidoService.listarPedidos().stream().map(pedido ->
+                        PedidoMapper.toDTO(
+                                pedido,
+                                "cliente",
+                                detallePedidoService.getCantidadTotalByPedido(pedido.getCodpedido())
+                        )
+                )
+                .collect(Collectors.toList());
+    }
 
 
 }

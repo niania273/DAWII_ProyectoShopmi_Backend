@@ -3,9 +3,9 @@ package pe.edu.alicorp.serviceorder.client;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@FeignClient( name = "product-service", url = "http://localhost:8082")
-public interface ProductoClient {
+@FeignClient( name = "autentication-service", url = "http://localhost:8082")
+public interface UsuarioClient {
 
     //@GetMapping("/productos/get")
-    // public List<ProductDTO> getProductosByPedido(Long codpedido);
+    //public UsuarioDTO getById(Long codUsuario);
 }

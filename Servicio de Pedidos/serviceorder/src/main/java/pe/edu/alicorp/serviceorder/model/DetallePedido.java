@@ -1,9 +1,13 @@
 package pe.edu.alicorp.serviceorder.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.MapsId;
+import jakarta.persistence.*;
+import lombok.Data;
 
+import java.time.LocalDateTime;
+
+@Entity
+@Table( name = "DETALLEPEDIDO")
+@Data
 public class DetallePedido {
     @EmbeddedId
     private DetallePedidoId id;
@@ -14,4 +18,8 @@ public class DetallePedido {
     private double preUni;
     @Column(name = "CANTIDAD", nullable = false)
     private int cantidad;
+    @Column(name = "FECHACREACION")
+    private LocalDateTime fechaCreacion;
+    @Column(name = "FECHAACTUALIZA")
+    private LocalDateTime fechaActualiza;
 }
