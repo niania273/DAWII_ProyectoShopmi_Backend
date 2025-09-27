@@ -3,7 +3,7 @@ package pe.edu.alicorp.serviceauthentication.Client;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.alicorp.serviceauthentication.dto.RegisterDTO;
+import pe.edu.alicorp.commondto.dto.RegisterDTO;
 
 import java.util.Map;
 

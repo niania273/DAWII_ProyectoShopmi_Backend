@@ -3,7 +3,7 @@ package pe.edu.alicorp.serviceauthentication.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pe.edu.alicorp.serviceauthentication.dto.RegisterDTO;
+import pe.edu.alicorp.commondto.dto.RegisterDTO;
 import pe.edu.alicorp.serviceauthentication.entity.Cliente;
 import pe.edu.alicorp.serviceauthentication.repository.ClienteRepository;
 

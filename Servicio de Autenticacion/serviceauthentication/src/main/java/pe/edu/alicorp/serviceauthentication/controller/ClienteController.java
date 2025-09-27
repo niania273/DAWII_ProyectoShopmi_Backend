@@ -4,7 +4,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.alicorp.serviceauthentication.dto.RegisterDTO;
+import pe.edu.alicorp.commondto.dto.RegisterDTO;
 import pe.edu.alicorp.serviceauthentication.service.ClienteService;
 
 import java.util.Map;
