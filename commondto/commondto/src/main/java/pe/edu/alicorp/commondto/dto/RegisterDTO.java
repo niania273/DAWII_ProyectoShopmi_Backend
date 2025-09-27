@@ -1,52 +1,27 @@
 package pe.edu.alicorp.commondto.dto;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
-
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class RegisterDTO {
+public class RegisterDTO implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     // CLIENTE
-    @NotBlank
     private String razonSocial;
-
-    @NotBlank
     private String nroDoc;
-
-    @Email
     private String corCliente;
 
     // USUARIO
-    @NotBlank
     private String apeUsuario;
-
-    @NotBlank
     private String nomUsuario;
-
-    @NotNull
     private LocalDate fecNac;
-
-    @Pattern(regexp = "[MF]")
-    private String sexUsuario;
-
-    @Pattern(regexp = "\\d{9}")
-    private String telUsuario;
-
-    @Email
-    @NotBlank
+    private String sexUsuario;   // expect "M" or "F"
+    private String telUsuario;   // expect 9 digits
     private String corUsuario;
-
-    @NotBlank
     private String password;
 
-    // Empty constructor
-    public RegisterDTO() {
-    }
+    public RegisterDTO() {}
 
-    // All-args constructor
     public RegisterDTO(String razonSocial, String nroDoc, String corCliente,
                        String apeUsuario, String nomUsuario, LocalDate fecNac,
                        String sexUsuario, String telUsuario, String corUsuario, String password) {
@@ -62,7 +37,6 @@ public class RegisterDTO {
         this.password = password;
     }
 
-    // Getters & Setters
     public String getRazonSocial() { return razonSocial; }
     public void setRazonSocial(String razonSocial) { this.razonSocial = razonSocial; }
 
@@ -93,11 +67,8 @@ public class RegisterDTO {
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
 
-    // Optional: toString
-    @Override
-    public String toString() {
-        return "RegisterDTO{" +
-                "razonSocial='" + razonSocial + '\'' +
+    @Override public String toString() {
+        return "RegisterDTO{razonSocial='" + razonSocial + '\'' +
                 ", nroDoc='" + nroDoc + '\'' +
                 ", corCliente='" + corCliente + '\'' +
                 ", apeUsuario='" + apeUsuario + '\'' +
