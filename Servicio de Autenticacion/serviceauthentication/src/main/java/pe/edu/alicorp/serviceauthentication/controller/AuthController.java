@@ -39,7 +39,6 @@ public class AuthController {
         user.setSex(String.valueOf(dto.getSexo()));
         user.setPasswordHash(passwordEncoder.encode(dto.getContrasenia()));
 
-        // Asignamos rol por defecto (Cliente = 1)
         Optional<Role> role = roleRepository.findById(1);
         role.ifPresent(user::setRole);
         user.setCodCliente(1);

@@ -33,7 +33,7 @@ public class JwtUtil {
 
     public String generateToken(User user) {
         Map<String, Object> claims = new HashMap<>();
-        claims.put("role", user.getRole().getName()); // 👈 aquí se agrega el rol
+        claims.put("role", user.getRole().getName());
         claims.put("email", user.getEmail());
 
         return Jwts.builder()
