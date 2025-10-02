@@ -2,7 +2,7 @@ package pe.edu.alicorp.commondto.dto;
 
 import java.util.List;
 
-public class PedidoDetalleDTO {
+public class PedidoDetalleResponseDTO {
     private PedidoResponseDTO pedido;
-    private List<ProductoPedidoDTO> productos;
+    private List<ProductoPedidoResponseDTO> productos;
 }

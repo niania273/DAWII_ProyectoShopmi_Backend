@@ -8,6 +8,7 @@ public class PedidoResponseDTO {
     private LocalDateTime fecPed;
     private String cliente;
     private double precioTotal;
+    private int codEstado;
     private String nomEstado;
     private int cantidadTotal;
     private boolean estPed;
@@ -42,6 +43,14 @@ public class PedidoResponseDTO {
 
     public void setPrecioTotal(double precioTotal) {
         this.precioTotal = precioTotal;
+    }
+
+    public int getCodEstado() {
+        return codEstado;
+    }
+
+    public void setCodEstado(int codEstado) {
+        this.codEstado = codEstado;
     }
 
     public String getNomEstado() {

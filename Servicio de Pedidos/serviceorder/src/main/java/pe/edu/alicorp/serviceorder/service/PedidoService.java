@@ -6,6 +6,7 @@ import pe.edu.alicorp.serviceorder.model.Pedido;
 import pe.edu.alicorp.serviceorder.repository.PedidoRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PedidoService {
@@ -15,5 +16,9 @@ public class PedidoService {
 
     public List<Pedido> listarPedidos(){
         return pedidoRepository.findAll();
+    }
+
+    public Optional<Pedido> obtenerPedido(Long codPedido){
+        return pedidoRepository.findById(codPedido);
     }
 }
