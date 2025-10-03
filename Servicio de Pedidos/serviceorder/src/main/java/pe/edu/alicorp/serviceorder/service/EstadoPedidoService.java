@@ -13,8 +13,8 @@ public class EstadoPedidoService {
     @Autowired
     private EstadoPedidoRepository repository;
 
-    public List<EstadoPedido> findAllActive(){
-        return repository.findByEstado(true);
+    public List<EstadoPedido> findAll(){
+        return repository.findAll();
     }
 
     public Optional<EstadoPedido> findById(Long id){

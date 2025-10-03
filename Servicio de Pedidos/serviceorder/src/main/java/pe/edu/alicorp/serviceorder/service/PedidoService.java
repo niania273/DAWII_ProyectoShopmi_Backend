@@ -14,7 +14,7 @@ public class PedidoService {
     @Autowired
     private PedidoRepository pedidoRepository;
 
-    public List<Pedido> listarPedidos(){
+    public List<Pedido> findAll(){
         return pedidoRepository.findAll();
     }
 

@@ -8,5 +8,4 @@ import java.util.List;
 
 @Repository
 public interface EstadoPedidoRepository extends JpaRepository<EstadoPedido, Long> {
-    List<EstadoPedido> findByEstado(boolean estado);
 }
